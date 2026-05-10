@@ -70,7 +70,7 @@ body::after {
   margin: 0 auto;
   padding: 0 20px;
 
-  /* slight off-center tumblr feel */
+  /* subtle old tumblr feel */
   transform: translateX(-16px);
 }
 
@@ -89,6 +89,48 @@ body::after {
 .site-title,
 .site-nav {
   line-height: 1.2;
+}
+
+/* =========================
+   HEADER TITLE / DESCRIPTION
+========================= */
+
+.site-title {
+  font-family: "Courier New", monospace !important;
+
+  color: #ff77aa !important;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  text-shadow:
+    1px 1px 0 #000,
+    0 0 6px rgba(255, 105, 150, 0.35);
+
+  font-size: 26px;
+}
+
+.site-title:hover {
+  text-decoration: none;
+  color: #ffffff !important;
+
+  text-shadow:
+    0 0 8px rgba(255, 105, 150, 0.8),
+    0 0 14px rgba(255, 105, 150, 0.4);
+}
+
+/* subtitle / description */
+.site-description,
+.site-header p,
+.site-header .description {
+  color: #d8d8d8;
+
+  font-size: 13px;
+  letter-spacing: 1px;
+
+  opacity: 0.85;
+
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
 }
 
 /* =========================
@@ -251,5 +293,9 @@ hr {
 
   .post {
     padding: 12px;
+  }
+
+  .site-title {
+    font-size: 20px;
   }
 }

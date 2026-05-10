@@ -18,7 +18,6 @@
     float: left;
   }
 
-  /* all icons inside buttons */
   #share-buttons > div > svg {
     width: 16px;
     height: 16px;
@@ -29,42 +28,51 @@
     margin-right: auto;
   }
 
-  /* FIRST standalone SVG (your main share icon) */
-  #share-buttons > svg {
-    width: 16px;
-    height: 16px;
-    fill: #d5d5d5;
-    vertical-align: middle;
-    display: inline-block;
-    margin-top: 10px;
-  }
-
   #share-buttons > div:hover {
     cursor: pointer;
   }
 
-  /* email icon tweak */
   #share-buttons > div.mail > svg {
     width: 14px;
     height: 14px;
     margin-top: 11px;
   }
+
+  /* small tooltip look */
+  .tooltip {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #aaa;
+    opacity: 0;
+    transition: 0.2s;
+    white-space: nowrap;
+  }
+
+  #share-buttons > div:hover .tooltip {
+    opacity: 1;
+  }
 </style>
 
-{% assign safeurl = site.url | append: page.url | url_encode %}
+{% assign safeurl = site.url | append: page.url %}
 {% assign safetitle = page.title | url_encode %}
 {% assign safetitlepre = "[Blog] " | append: page.author | append: " - " | url_encode %}
 
 <span style="color: silver;">share on: </span>
 
 <div id="share-buttons">
-  
-  <!-- main share icon -->
-  <svg viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"/>
-  </svg>
 
-  <!-- email -->
+  <!-- SHARE LINK (COPY TO CLIPBOARD) -->
+  <div class="share-link" onclick="copyLink('{{ safeurl }}')">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.9 12a5 5 0 0 1 5-5h3v2h-3a3 3 0 0 0 0 6h3v2h-3a5 5 0 0 1-5-5zm7-1h2v2h-2v-2zm4-4h3a5 5 0 0 1 0 10h-3v-2h3a3 3 0 0 0 0-6h-3V7z"/>
+    </svg>
+    <div class="tooltip">copy link</div>
+  </div>
+
+  <!-- EMAIL -->
   <div class="mail"
        title="share on email"
        onclick="window.open('mailto:?&body={{ safeurl }}&subject={{ safetitlepre }}{{ safetitle }}','popup','width=600,height=600'); return false;">
@@ -74,3 +82,19 @@
   </div>
 
 </div>
+
+<script>
+function copyLink(url) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(url);
+  } else {
+    // fallback
+    const textArea = document.createElement("textarea");
+    textArea.value = url;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+  }
+}
+</script>

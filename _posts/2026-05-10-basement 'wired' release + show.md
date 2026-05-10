@@ -14,9 +14,9 @@ crowd was amazing (even though i got drenched in beer and water) and was a reall
 
   <!-- TOP ROW: 3 VIDEOS -->
   <div class="grid-row">
-    <iframe src="https://www.youtube-nocookie.com/embed/watch?v=YICuo8o3lvE" allowfullscreen></iframe>
-    <iframe src="https://www.youtube-nocookie.com/embed/watch?v=tQE5qG0Y0Fc" allowfullscreen></iframe>
-    <iframe src="https://www.youtube-nocookie.com/embed/watch?v=IFWOaK4DE6I" allowfullscreen></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/YICuo8o3lvE" allowfullscreen></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/tQE5qG0Y0Fc" allowfullscreen></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/IFWOaK4DE6I" allowfullscreen></iframe>
   </div>
 
   <!-- BOTTOM ROW: 2 IMAGES -->

@@ -335,7 +335,13 @@ basement 2026 post
 }
 
 .basement-post .post-banner img {
-  height: 140px;
   width: 100%;
+  height: 140px;
+
   object-fit: cover;
+  object-position: center 20%;
+
+  display: block;
+
+  filter: contrast(1.05) saturate(1.1);
 }

@@ -24,3 +24,5 @@ defaults:
       type: post
     values:
       tags: Other
+sass:
+  style: compressed

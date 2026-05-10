@@ -368,22 +368,6 @@ basement 2026 post
 }
 
 /* images */
-/* =========================
-   LARGE IMAGE GRID (ADJUSTED POSITION + SOFTER ZOOM)
-========================= */
-
-.image-grid {
-  margin: 30px 0 10px; /* 👈 pushes whole block slightly lower */
-}
-
-/* rows */
-.image-grid .row {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 16px; /* 👈 slightly more breathing room */
-}
-
-/* BIG IMAGES */
 .grid-img {
   flex: 1;
 
@@ -392,26 +376,13 @@ basement 2026 post
 
   object-fit: cover;
 
+  /* 👇 this moves the image DOWN inside the crop */
+  object-position: center 65%;
+
   border: 2px solid rgba(255,105,150,0.6);
   box-shadow: 4px 4px 0 rgba(0,0,0,0.85);
 
   cursor: zoom-in;
 
-  transition: transform 0.25s ease; /* smoother feel */
-}
-
-/* softer zoom (reduced from 1.03-ish feel) */
-.grid-img:hover {
-  transform: scale(1.015); /* 👈 reduced zoom */
-}
-
-/* mobile */
-@media (max-width: 700px) {
-  .image-grid .row {
-    flex-direction: column;
-  }
-
-  .grid-img {
-    height: 220px;
-  }
+  transition: transform 0.25s ease;
 }

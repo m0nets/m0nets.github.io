@@ -4,7 +4,7 @@
 @import "minima";
 
 /* =========================
-   BACKGROUND (TUMBLR STYLE)
+   BACKGROUND
 ========================= */
 
 body {
@@ -13,7 +13,7 @@ body {
 
   background-image: url("/images/titlefight3-copy.jpg");
   background-size: cover;
-  background-position: center 20%; /* ⬅ moves image UP slightly */
+  background-position: center 20%; /* move image UP */
   background-attachment: fixed;
   background-repeat: no-repeat;
 
@@ -23,19 +23,19 @@ body {
   position: relative;
 }
 
-/* DARK OVERLAY (stronger for readability) */
+/* DARK OVERLAY (stronger readability) */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.65); /* ⬅ darker than before */
+  background: rgba(0, 0, 0, 0.68);
 
   pointer-events: none;
   z-index: 0;
 }
 
-/* scanline / old web noise */
+/* SCANLINES / OLD WEB NOISE */
 body::after {
   content: "";
   position: fixed;
@@ -43,8 +43,8 @@ body::after {
 
   background: repeating-linear-gradient(
     0deg,
-    rgba(255,255,255,0.03),
-    rgba(255,255,255,0.03) 1px,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 1px,
     transparent 2px,
     transparent 4px
   );
@@ -53,7 +53,7 @@ body::after {
   z-index: 0;
 }
 
-/* ensure content is above overlays */
+/* keep content above overlays */
 .site-header,
 .site-footer,
 .page-content {
@@ -62,17 +62,17 @@ body::after {
 }
 
 /* =========================
-   LAYOUT (LESS CLEAN = MORE TUMBLR)
+   LAYOUT (OFF-CENTER BLOG FEEL)
 ========================= */
 
 .wrapper {
   max-width: 720px;
-  margin-left: 40px; /* off-center blog feel */
+  margin-left: 40px;
   padding: 0 20px;
 }
 
 /* =========================
-   POSTS (CHAOTIC BLOG BOXES)
+   POSTS (TUMBLR CHAOS STYLE)
 ========================= */
 
 .post {
@@ -84,13 +84,13 @@ body::after {
   padding: 14px;
   margin-bottom: 18px;
 
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.85);
 
-  transform: rotate(-0.15deg); /* subtle “old web imperfection” */
+  transform: rotate(-0.12deg);
 }
 
 /* =========================
-   TYPOGRAPHY (EARLY BLOG FEEL)
+   TYPOGRAPHY
 ========================= */
 
 h1, h2, h3 {
@@ -109,7 +109,7 @@ p {
 }
 
 /* =========================
-   LINKS (NEON TUMBLR STYLE)
+   LINKS (TUMBLR NEON)
 ========================= */
 
 a {
@@ -134,7 +134,7 @@ a:hover {
 }
 
 /* =========================
-   DIVIDERS (OLD INTERNET STYLE)
+   DIVIDERS
 ========================= */
 
 hr {
@@ -153,7 +153,7 @@ hr {
 }
 
 /* =========================
-   HEADER / FOOTER (MINIMAL CHAOS)
+   HEADER / FOOTER CLEAN
 ========================= */
 
 .site-header,
@@ -161,4 +161,18 @@ hr {
   background: transparent;
   border: none;
   box-shadow: none;
+}
+
+/* =========================
+   TEXT SELECTION FIX (IMPORTANT)
+========================= */
+
+::selection {
+  background: #ff6b9a;
+  color: #000;
+}
+
+::-moz-selection {
+  background: #ff6b9a;
+  color: #000;
 }

@@ -369,14 +369,14 @@ basement 2026 post
 
 /* images */
 /* =========================
-   IMAGE GRID (BIG ZINE / GIG STYLE)
+   IMAGE GRID (GIG / ZINE STYLE)
 ========================= */
 
 .image-grid {
   margin: 20px 0;
 }
 
-/* rows */
+/* rows (3 on top, 2 below) */
 .image-grid .row {
   display: flex;
   gap: 12px;
@@ -392,7 +392,7 @@ basement 2026 post
 
   object-fit: cover;
 
-  /* 👇 shifts image DOWN inside frame */
+  /* default framing (you can adjust globally here) */
   object-position: center 65%;
 
   border: 2px solid rgba(255,105,150,0.6);
@@ -403,12 +403,24 @@ basement 2026 post
   transition: transform 0.25s ease;
 }
 
-/* subtle zoom only */
+/* subtle hover zoom */
 .grid-img:hover {
   transform: scale(1.01);
 }
 
-/* mobile stacking */
+/* =========================
+   SPECIAL IMAGE OVERRIDES
+========================= */
+
+/* shift ONLY IMG_2349 further down */
+.shift80 {
+  object-position: center 80% !important;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
 @media (max-width: 700px) {
   .image-grid .row {
     flex-direction: column;

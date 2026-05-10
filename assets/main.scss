@@ -13,29 +13,29 @@ body {
 
   background-image: url("/images/Screenshot 2026-05-10 at 20-14-23 Top 15 Title Fight Songs to Ease the Pain of Them Probably Never Getting Back Together.png");
   background-size: cover;
-  background-position: center 20%; /* move image UP */
+  background-position: center 20%;
   background-attachment: fixed;
   background-repeat: no-repeat;
 
   font-family: "Courier New", monospace;
-  color: #f2f2f2;
+  color: #f5f5f5;
 
   position: relative;
 }
 
-/* DARK OVERLAY (stronger readability) */
+/* DARK OVERLAY */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.68);
+  background: rgba(0, 0, 0, 0.72);
 
   pointer-events: none;
   z-index: 0;
 }
 
-/* SCANLINES / OLD WEB NOISE */
+/* OLD WEB SCANLINES */
 body::after {
   content: "";
   position: fixed;
@@ -43,8 +43,8 @@ body::after {
 
   background: repeating-linear-gradient(
     0deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.03) 1px,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
     transparent 2px,
     transparent 4px
   );
@@ -53,7 +53,7 @@ body::after {
   z-index: 0;
 }
 
-/* keep content above overlays */
+/* KEEP CONTENT ABOVE OVERLAY */
 .site-header,
 .site-footer,
 .page-content {
@@ -62,65 +62,101 @@ body::after {
 }
 
 /* =========================
-   LAYOUT (OFF-CENTER BLOG FEEL)
+   LAYOUT
 ========================= */
 
 .wrapper {
   max-width: 720px;
-  margin-left: 40px;
+  margin: 0 auto;
   padding: 0 20px;
+
+  /* subtle off-center tumblr feel */
+  transform: translateX(-16px);
 }
 
 /* =========================
-   POSTS (TUMBLR CHAOS STYLE)
+   HEADER / FOOTER
+========================= */
+
+.site-header,
+.site-footer {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* remove ugly minima spacing */
+.site-title,
+.site-nav {
+  line-height: 1.2;
+}
+
+/* =========================
+   POSTS
 ========================= */
 
 .post {
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.58);
 
   border: 2px dashed rgba(255, 105, 150, 0.6);
   border-left: 6px solid #ff6b9a;
 
-  padding: 14px;
-  margin-bottom: 18px;
+  padding: 16px;
+  margin-bottom: 22px;
 
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.85);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.85);
 
-  transform: rotate(-0.12deg);
+  transform: rotate(-0.08deg);
+
+  backdrop-filter: blur(1px);
 }
 
 /* =========================
    TYPOGRAPHY
 ========================= */
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Courier New", monospace;
   text-transform: uppercase;
   letter-spacing: 2px;
 
-  color: #ff6b9a;
-  text-shadow: 1px 1px 0 #000;
+  color: #ff77aa;
+
+  text-shadow:
+    1px 1px 0 #000,
+    0 0 6px rgba(255, 105, 150, 0.25);
 }
 
-p {
-  line-height: 1.7;
-  margin: 10px 0;
-  opacity: 0.95;
+p,
+li {
+  line-height: 1.8;
+  color: #f1f1f1;
+}
+
+/* improve readability */
+.post-content {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
 }
 
 /* =========================
-   LINKS (TUMBLR NEON)
+   LINKS
 ========================= */
 
 a {
-  color: #ff4fa3;
+  color: #ff5ca8;
   text-decoration: none;
+
+  transition: 0.15s ease;
 }
 
 a:hover {
   color: #ffffff;
-  background: #000;
-  padding: 0 2px;
+  background: rgba(0,0,0,0.7);
+
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 /* =========================
@@ -129,8 +165,24 @@ a:hover {
 
 .post-meta {
   font-size: 12px;
-  opacity: 0.6;
+  opacity: 0.72;
   letter-spacing: 1px;
+  color: #d8d8d8;
+}
+
+/* =========================
+   BLOCKQUOTES
+========================= */
+
+blockquote {
+  border-left: 3px solid #ff6b9a;
+  margin-left: 0;
+  padding-left: 12px;
+
+  color: #dddddd;
+  opacity: 0.9;
+
+  font-style: italic;
 }
 
 /* =========================
@@ -153,26 +205,49 @@ hr {
 }
 
 /* =========================
-   HEADER / FOOTER CLEAN
-========================= */
-
-.site-header,
-.site-footer {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-/* =========================
-   TEXT SELECTION FIX (IMPORTANT)
+   TEXT HIGHLIGHT FIX
 ========================= */
 
 ::selection {
-  background: #ff6b9a;
-  color: #000;
+  background: #ff77aa;
+  color: #111111;
+  text-shadow: none;
 }
 
 ::-moz-selection {
+  background: #ff77aa;
+  color: #111111;
+  text-shadow: none;
+}
+
+/* =========================
+   SCROLLBAR (OPTIONAL OLD WEB FEEL)
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.6);
+}
+
+::-webkit-scrollbar-thumb {
   background: #ff6b9a;
-  color: #000;
+  border: 1px solid #000;
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    transform: none;
+    padding: 0 14px;
+  }
+
+  .post {
+    padding: 12px;
+  }
 }

@@ -369,53 +369,33 @@ basement 2026 post
 
 /* images */
 /* =========================
-   THUMBNAIL IMAGES (SMALL PREVIEW)
+   SOFT ZOOM IMAGE (ZINE STYLE)
 ========================= */
 
-.thumb {
-  max-width: 220px;   /* 👈 controls small size */
+.zoomable {
+  max-width: 220px;   /* small default size */
   width: 100%;
 
-  cursor: zoom-in;
+  display: block;
+
+  margin: 10px 0;
 
   border: 2px solid rgba(255,105,150,0.6);
   box-shadow: 3px 3px 0 rgba(0,0,0,0.85);
 
-  margin: 10px 0;
+  cursor: zoom-in;
 
   transition: transform 0.2s ease;
 }
 
-.thumb:hover {
-  transform: scale(1.03);
+/* click or hover = slight enlargement */
+.zoomable:hover {
+  transform: scale(1.08);
 }
 
-/* =========================
-   LIGHTBOX (FULL SCREEN VIEW)
-========================= */
-
-.lightbox {
-  display: none;
-
-  position: fixed;
-  inset: 0;
-
-  background: rgba(0,0,0,0.9);
-
-  justify-content: center;
-  align-items: center;
-
-  z-index: 999;
-}
-
-.lightbox:target {
-  display: flex;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-
-  border: 2px solid rgba(255,105,150,0.7);
-  box-shadow: 6px 6px 0 black;
+/* optional: keep layout clean on mobile */
+@media (max-width: 600px) {
+  .zoomable {
+    max-width: 100%;
+  }
 }

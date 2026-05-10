@@ -20,11 +20,25 @@ crowd was amazing (even though i got drenched in beer and water) and was a reall
   </div>
 
   <!-- BOTTOM ROW: 2 IMAGES -->
-  <div class="grid-row images">
-    <img src="/images/IMG_2349.png" alt="IMG_2349.png">
-    <img src="/images/IMG_2350.png" alt="IMG_2350.png">
-  </div>
+  <!-- IMAGE 1 -->
+<a href="#img1">
+  <img src="/images/IMG_2349.png" class="zoomable">
+</a>
 
+<a href="#" class="lightbox" id="img1">
+  <img src="/images/IMG_2349.png">
+</a>
+
+<br><br>
+
+<!-- IMAGE 2 -->
+<a href="#img2">
+  <img src="/images/IMG_2350.png" class="zoomable">
+</a>
+
+<a href="#" class="lightbox" id="img2">
+  <img src="/images/IMG_2350.png">
+</a>
 </div>
 however as an album i found it quite weak for basement. there are some songs i thoroughly enjoyed dont get me wrong. 'wired' and 'broken by design' are definetly staple to their original sound with andrews awkward vocals however the rest just seemed out of place. i think it may have just been underwhelming due to the 8 year wait but still, for me i just couldnt love it. i found it too slow for their signature sound and i am tad biased as i do love their heavier more melodic songs like 'songs about the weather'.
 

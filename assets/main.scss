@@ -3,11 +3,15 @@
 
 @import "minima";
 
+/* =========================
+   BACKGROUND
+========================= */
+
 body {
   margin: 0;
   min-height: 100vh;
 
-  background-image: url("{{ '/images/titlefight3-copy.jpg' | relative_url }}") !important;
+  background-image: url("{{ '/images/titlefight3-copy.jpg' | relative_url }}");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -16,11 +20,69 @@ body {
   color: #eaeaea;
 }
 
-/* dark overlay */
+/* ⚠️ LIGHTER overlay (fixes “too dark” issue) */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0, 0, 0, 0.45); /* was too dark before */
   z-index: -1;
+}
+
+/* =========================
+   GLASS PANELS (LESS OPACITY)
+========================= */
+
+.page-content,
+.wrapper,
+.post,
+.site-header,
+.site-footer {
+  background: rgba(25, 25, 30, 0.35); /* lighter glass */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  padding: 20px;
+
+  transition: all 0.2s ease;
+}
+
+/* =========================
+   FIX HOVER ISSUE (IMPORTANT)
+========================= */
+
+a {
+  color: #ff6b9a;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+/* make hover readable (prevents blending) */
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(255, 105, 150, 0.8);
+}
+
+/* =========================
+   PREVENT “BLENDING INTO BACKGROUND”
+========================= */
+
+.post:hover,
+.page-content:hover {
+  background: rgba(30, 30, 35, 0.55);
+}
+
+/* =========================
+   REMOVE “LINE THROUGH PAGE” EFFECT
+   (usually caused by borders + shadow stacking)
+========================= */
+
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
 }

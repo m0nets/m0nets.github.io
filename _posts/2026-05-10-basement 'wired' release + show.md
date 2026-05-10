@@ -20,8 +20,8 @@ crowd was amazing (even though i got drenched in beer and water) and was a reall
   </div>
 <!-- BOTTOM ROW (2 images) -->
   <div class="row">
-    <img src="/images/IMG_2350.png" class="grid-img rotate1">
-    <img src="/images/IMG_2349.png" class="grid-img shift80 rotate1">
+    <img src="/images/IMG_2350.png" class="grid-img">
+    <img src="/images/IMG_2349.png" class="grid-img shift80">
   </div>
 
 </div>

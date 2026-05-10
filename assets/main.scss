@@ -330,11 +330,12 @@ hr {
 basement 2026 post
 ========================= */
 .basement-post .post-banner {
-  border: 2px solid rgba(255, 105, 150, 0.8);
-
-  box-shadow: 5px 5px 0 rgba(0,0,0,0.85);
+  max-height: 140px;
+  overflow: hidden;
 }
 
-.basement-post .post {
-  background: rgba(0, 0, 0, 0.65);
+.basement-post .post-banner img {
+  height: 140px;
+  width: 100%;
+  object-fit: cover;
 }

@@ -369,29 +369,32 @@ basement 2026 post
 
 /* images */
 /* =========================
-   IMAGE GRID (GIG / ZINE STYLE)
+   IMAGE GRID (GIG / ZINE FINAL SYSTEM)
 ========================= */
 
 .image-grid {
-  margin: 30px 0 10px; /* space above whole block */
+  margin: 30px 0 10px;
 }
 
-/* rows (3 top, 2 bottom) */
+/* ROW LAYOUT */
 .image-grid .row {
   display: flex;
 
-  gap: 16px;            /* space between images */
-  margin-bottom: 22px;  /* space between rows */
+  gap: 24px;           /* balanced spacing */
+  margin-bottom: 28px; /* row separation */
 
   align-items: flex-start;
 }
 
-/* main image style */
+/* =========================
+   MAIN IMAGE STYLE
+========================= */
+
 .grid-img {
   flex: 1;
 
   width: 100%;
-  height: 240px; /* big, video-like feel */
+  height: 240px; /* cinematic / video-like */
 
   object-fit: cover;
 
@@ -406,18 +409,38 @@ basement 2026 post
   transition: transform 0.25s ease;
 }
 
-/* subtle hover zoom */
+/* controlled zoom (balanced aesthetic) */
 .grid-img:hover {
-  transform: scale(1.01);
+  transform: scale(1.025);
 }
 
 /* =========================
-   SPECIAL IMAGE OVERRIDES
+   PER-IMAGE VARIATIONS (ZINE FEEL)
 ========================= */
 
-/* IMG_2349 specific shift */
+/* deeper crop for specific images */
 .shift80 {
   object-position: center 80% !important;
+}
+
+/* slight scrapbook rotation options */
+.rotate1 {
+  transform: rotate(-1deg);
+}
+
+.rotate2 {
+  transform: rotate(1.5deg);
+}
+
+.rotate3 {
+  transform: rotate(-0.5deg);
+}
+
+/* keep hover override clean even with rotation */
+.grid-img.rotate1:hover,
+.grid-img.rotate2:hover,
+.grid-img.rotate3:hover {
+  transform: scale(1.025) rotate(0deg);
 }
 
 /* =========================

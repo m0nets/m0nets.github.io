@@ -21,8 +21,8 @@ crowd was amazing (even though i got drenched in beer and water) and was a reall
 
   <!-- BOTTOM ROW: 2 IMAGES -->
   <div class="grid-row images">
-    <img src="/images/" alt="IMG_2349.png">
-    <img src="/images/" alt="IMG_2350.png">
+    <img src="/images/IMG_2349.png" alt="IMG_2349.png">
+    <img src="/images/IMG_2350.png" alt="IMG_2350.png">
   </div>
 
 </div>

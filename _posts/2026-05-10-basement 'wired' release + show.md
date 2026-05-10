@@ -4,7 +4,7 @@ date: 2026-05-10
 body_class: basement-post
 ---
 <div class="post-banner">
-  <img src="/images/BasementReviewBanner.png" alt="Basement review banner">
+  <img src="/images/" alt="Basement review banner">
 </div>
 basement has come to be one of my favourite bands as of recent. they arose from the same time as title fight (even playing with them) under run for cover records in the 2010s and have made post hardcore staples like 'are you the one' and 'pine' etc. etc.
 

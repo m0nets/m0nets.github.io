@@ -369,20 +369,31 @@ basement 2026 post
 
 /* images */
 /* =========================
-   LIGHTBOX IMAGE EXPAND
+   THUMBNAIL IMAGES (SMALL PREVIEW)
 ========================= */
 
-.zoomable {
+.thumb {
+  max-width: 220px;   /* 👈 controls small size */
+  width: 100%;
+
   cursor: zoom-in;
+
+  border: 2px solid rgba(255,105,150,0.6);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.85);
+
+  margin: 10px 0;
+
   transition: transform 0.2s ease;
-  max-width: 100%;
 }
 
-.zoomable:hover {
-  transform: scale(1.01);
+.thumb:hover {
+  transform: scale(1.03);
 }
 
-/* overlay background */
+/* =========================
+   LIGHTBOX (FULL SCREEN VIEW)
+========================= */
+
 .lightbox {
   display: none;
 
@@ -397,7 +408,6 @@ basement 2026 post
   z-index: 999;
 }
 
-/* show when clicked */
 .lightbox:target {
   display: flex;
 }

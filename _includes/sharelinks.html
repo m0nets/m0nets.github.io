@@ -54,24 +54,20 @@
     opacity: 1;
   }
 
-  /* copied popup */
-  #copied-msg {
-    position: fixed;
-    bottom: 20px;
+  /* feedback under icon */
+  .copy-feedback {
+    position: absolute;
+    bottom: -16px;
     left: 50%;
     transform: translateX(-50%);
-    background: #222;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 13px;
+    font-size: 10px;
+    color: #ff6b9a;
     opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-    z-index: 9999;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
   }
 
-  #copied-msg.show {
+  .copy-feedback.show {
     opacity: 1;
   }
 </style>
@@ -87,13 +83,16 @@
   <!-- COPY LINK -->
   <div class="share-link"
        data-url="{{ safeurl }}"
-       onclick="copyLink(this.dataset.url)">
+       onclick="copyLink(this.dataset.url, this)">
 
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 24 24">
       <path d="M3.9 12a5 5 0 0 1 5-5h3v2h-3a3 3 0 0 0 0 6h3v2h-3a5 5 0 0 1-5-5zm7-1h2v2h-2v-2zm4-4h3a5 5 0 0 1 0 10h-3v-2h3a3 3 0 0 0 0-6h-3V7z"/>
     </svg>
 
     <div class="tooltip">copy link</div>
+
+    <!-- feedback text -->
+    <div class="copy-feedback"></div>
   </div>
 
   <!-- EMAIL -->
@@ -104,7 +103,7 @@
          'width=600,height=600'
        ); return false;">
 
-    <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1792 1792">
       <path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/>
     </svg>
 
@@ -112,11 +111,8 @@
 
 </div>
 
-<!-- COPIED POPUP -->
-<div id="copied-msg">copied!</div>
-
 <script>
-function copyLink(url) {
+function copyLink(url, el) {
   if (!url) return;
 
   if (navigator.clipboard) {
@@ -130,11 +126,13 @@ function copyLink(url) {
     document.body.removeChild(ta);
   }
 
-  const msg = document.getElementById("copied-msg");
-  msg.classList.add("show");
+  const feedback = el.querySelector(".copy-feedback");
+
+  feedback.textContent = "copied!";
+  feedback.classList.add("show");
 
   setTimeout(() => {
-    msg.classList.remove("show");
-  }, 1500);
+    feedback.classList.remove("show");
+  }, 1200);
 }
 </script>

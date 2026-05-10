@@ -18,28 +18,9 @@ crowd was amazing (even though i got drenched in beer and water) and was a reall
     <iframe src="https://www.youtube-nocookie.com/embed/tQE5qG0Y0Fc" allowfullscreen></iframe>
     <iframe src="https://www.youtube-nocookie.com/embed/IFWOaK4DE6I" allowfullscreen></iframe>
   </div>
+<img src="/images/IMG_2349.png" class="zoomable">
 
-  <!-- BOTTOM ROW: 2 IMAGES -->
-  <!-- IMAGE 1 -->
-<a href="#img1">
-  <img src="/images/IMG_2349.png" class="zoomable">
-</a>
-
-<a href="#" class="lightbox" id="img1">
-  <img src="/images/IMG_2349.png">
-</a>
-
-<br><br>
-
-<!-- IMAGE 2 -->
-<a href="#img2">
-  <img src="/images/IMG_2350.png" class="zoomable">
-</a>
-
-<a href="#" class="lightbox" id="img2">
-  <img src="/images/IMG_2350.png">
-</a>
-</div>
+<img src="/images/IMG_2350.png" class="zoomable">
 however as an album i found it quite weak for basement. there are some songs i thoroughly enjoyed dont get me wrong. 'wired' and 'broken by design' are definetly staple to their original sound with andrews awkward vocals however the rest just seemed out of place. i think it may have just been underwhelming due to the 8 year wait but still, for me i just couldnt love it. i found it too slow for their signature sound and i am tad biased as i do love their heavier more melodic songs like 'songs about the weather'.
 
 so all things considered, i believe the album is a weak seven out of ten, though i do believe ,with time, it will grow on me. the lyrics are definitely there and the passion in the vocal writings is so easy to see, so no critique there and for me that is why i have rated it as high as i have. we shall see though, i will continue to give it a listen more thouroughly though this is like my 7th relisten

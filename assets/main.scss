@@ -74,7 +74,7 @@ body::after {
 }
 
 /* =========================
-   HEADER / DESCRIPTION FIX
+   HEADER
 ========================= */
 
 .site-title {
@@ -156,7 +156,7 @@ li {
 }
 
 /* =========================
-   LINKS
+   LINKS (CLEAN HOVER)
 ========================= */
 
 a {
@@ -174,8 +174,6 @@ a:hover {
   background: rgba(0,0,0,0.7);
 
   text-shadow: 0 0 6px rgba(255, 92, 168, 0.6);
-
-  animation: vhsJitter 0.25s infinite;
 }
 
 /* =========================
@@ -219,6 +217,46 @@ a:hover {
 }
 
 /* =========================
+   ARCHIVE FIX (IMPORTANT)
+========================= */
+
+.page-heading,
+.post-list-heading {
+  display: inline-block;
+
+  background: rgba(0, 0, 0, 0.65);
+  padding: 6px 10px;
+
+  border-left: 5px solid #ff77aa;
+
+  color: #ff77aa;
+
+  text-shadow:
+    1px 1px 0 #000,
+    0 0 6px rgba(255, 105, 150, 0.35);
+}
+
+.post-list a,
+.post-link {
+  display: inline-block;
+
+  background: rgba(0, 0, 0, 0.55);
+  padding: 3px 6px;
+
+  margin: 2px 0;
+
+  border-left: 3px solid rgba(255, 105, 150, 0.6);
+}
+
+.post-list a:hover,
+.post-link:hover {
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+
+  text-shadow: 0 0 6px rgba(255, 92, 168, 0.6);
+}
+
+/* =========================
    BLOCKQUOTES
 ========================= */
 
@@ -258,28 +296,6 @@ hr {
 ::selection {
   background: #ff77aa;
   color: #111;
-}
-
-/* =========================
-   VHS JITTER EFFECT
-========================= */
-
-@keyframes vhsJitter {
-  0%   { transform: translate(0px, 0px) skew(0deg); }
-  20%  { transform: translate(-1px, 1px) skew(0.2deg); }
-  40%  { transform: translate(1px, -1px) skew(-0.2deg); }
-  60%  { transform: translate(-1px, 0px) skew(0.15deg); }
-  80%  { transform: translate(1px, 1px) skew(-0.15deg); }
-  100% { transform: translate(0px, 0px) skew(0deg); }
-}
-
-.post:hover,
-.site-title:hover {
-  animation: vhsJitter 0.3s infinite;
-}
-
-a {
-  will-change: transform;
 }
 
 /* =========================

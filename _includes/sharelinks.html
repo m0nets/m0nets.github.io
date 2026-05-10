@@ -38,7 +38,7 @@
     margin-top: 11px;
   }
 
-  /* small tooltip look */
+  /* tooltip look */
   .tooltip {
     position: absolute;
     bottom: -18px;
@@ -64,7 +64,7 @@
 
 <div id="share-buttons">
 
-  <!-- SHARE LINK (COPY TO CLIPBOARD) -->
+  <!-- sharelink -->
   <div class="share-link" onclick="copyLink('{{ safeurl }}')">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M3.9 12a5 5 0 0 1 5-5h3v2h-3a3 3 0 0 0 0 6h3v2h-3a5 5 0 0 1-5-5zm7-1h2v2h-2v-2zm4-4h3a5 5 0 0 1 0 10h-3v-2h3a3 3 0 0 0 0-6h-3V7z"/>
@@ -72,7 +72,7 @@
     <div class="tooltip">copy link</div>
   </div>
 
-  <!-- EMAIL -->
+  <!-- email -->
   <div class="mail"
        title="share on email"
        onclick="window.open('mailto:?&body={{ safeurl }}&subject={{ safetitlepre }}{{ safetitle }}','popup','width=600,height=600'); return false;">

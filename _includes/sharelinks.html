@@ -33,6 +33,7 @@
     cursor: pointer;
   }
 
+  /* tooltip */
   .tooltip {
     position: absolute;
     bottom: -18px;
@@ -49,7 +50,25 @@
     opacity: 1;
   }
 
-  /* feedback under icons */
+  /* label text */
+  .share-label {
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #fff;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+  }
+
+  /* hide label when copied */
+  .copied .share-label {
+    opacity: 0;
+  }
+
+  /* copied feedback */
   .copy-feedback {
     position: absolute;
     bottom: -16px;
@@ -86,10 +105,11 @@
 
     <div class="tooltip">copy link</div>
     <div class="copy-feedback"></div>
+    <span class="share-label">share</span>
 
   </div>
 
-  <!-- EMAIL (RELIABLE COPY VERSION) -->
+  <!-- EMAIL (copy email text instead of broken mailto) -->
   <div class="mail"
        data-url="{{ safeurl }}"
        onclick="copyEmail(this.dataset.url, this)">
@@ -100,6 +120,7 @@
 
     <div class="tooltip">copy email</div>
     <div class="copy-feedback"></div>
+    <span class="share-label">email</span>
 
   </div>
 
@@ -109,14 +130,9 @@
 function copyLink(url, el) {
   if (!url) return;
 
-  navigator.clipboard.writeText(url).catch(() => {
-    const ta = document.createElement("textarea");
-    ta.value = url;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand("copy");
-    document.body.removeChild(ta);
-  });
+  navigator.clipboard.writeText(url);
+
+  el.classList.add("copied");
 
   const feedback = el.querySelector(".copy-feedback");
   feedback.textContent = "copied!";
@@ -124,6 +140,7 @@ function copyLink(url, el) {
 
   setTimeout(() => {
     feedback.classList.remove("show");
+    el.classList.remove("copied");
   }, 1200);
 }
 
@@ -131,17 +148,11 @@ function copyEmail(url, el) {
   const subject = "[Blog] " + document.title;
   const body = "Check this out: " + url;
 
-  const emailText =
-    "Subject: " + subject + "\n\n" + body;
+  const emailText = "Subject: " + subject + "\n\n" + body;
 
-  navigator.clipboard.writeText(emailText).catch(() => {
-    const ta = document.createElement("textarea");
-    ta.value = emailText;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand("copy");
-    document.body.removeChild(ta);
-  });
+  navigator.clipboard.writeText(emailText);
+
+  el.classList.add("copied");
 
   const feedback = el.querySelector(".copy-feedback");
   feedback.textContent = "email copied!";
@@ -149,6 +160,7 @@ function copyEmail(url, el) {
 
   setTimeout(() => {
     feedback.classList.remove("show");
+    el.classList.remove("copied");
   }, 1200);
 }
 </script>

@@ -59,16 +59,16 @@
     font-size: 10px;
     color: #fff;
     opacity: 1;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.15s ease;
     white-space: nowrap;
   }
 
-  /* hide label when copied */
+  /* hide label when active */
   .copied .share-label {
     opacity: 0;
   }
 
-  /* copied feedback */
+  /* feedback text */
   .copy-feedback {
     position: absolute;
     bottom: -16px;
@@ -77,7 +77,7 @@
     font-size: 10px;
     color: #ff6b9a;
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.15s ease;
     white-space: nowrap;
   }
 
@@ -87,8 +87,6 @@
 </style>
 
 {% assign safeurl = site.url | default: '' | append: site.baseurl | append: page.url %}
-{% assign safetitle = page.title | url_encode %}
-{% assign safetitlepre = "[Blog] " | append: page.author | append: " - " %}
 
 <span style="color: silver;">share on: </span>
 
@@ -109,7 +107,7 @@
 
   </div>
 
-  <!-- EMAIL (copy email text instead of broken mailto) -->
+  <!-- EMAIL (COPY VERSION – RELIABLE) -->
   <div class="mail"
        data-url="{{ safeurl }}"
        onclick="copyEmail(this.dataset.url, this)">

@@ -380,8 +380,8 @@ basement 2026 post
 .image-grid .row {
   display: flex;
 
-  gap: 60px;           /* balanced spacing */
-  margin-bottom: 60px; /* row separation */
+  gap: 60px;
+  margin-bottom: 60px;
 
   align-items: flex-start;
 }
@@ -398,23 +398,19 @@ basement 2026 post
 
   object-fit: cover;
 
-  /* default framing */
+  /* framing control */
   object-position: center 65%;
 
-  cursor: zoom-in;
+  cursor: default; /* removed zoom feel */
 
-  transition: transform 0.25s ease;
+  transition: none; /* ❌ removes animation completely */
 }
 
-/* controlled zoom */
-.grid-img:hover {
-  transform: scale(1.025);
-}
-
-/* deeper crop for specific images */
+/* deeper crop option */
 .shift80 {
   object-position: center 80% !important;
 }
+
 /* =========================
    MOBILE RESPONSIVE
 ========================= */
@@ -424,6 +420,10 @@ basement 2026 post
     flex-direction: column;
   }
 
+  .grid-img {
+    height: 220px;
+  }
+}
   .grid-img {
     height: 220px;
   }

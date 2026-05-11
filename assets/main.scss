@@ -394,55 +394,27 @@ basement 2026 post
   flex: 1;
 
   width: 100%;
-  height: 240px; /* cinematic / video-like */
+  height: 240px;
 
   object-fit: cover;
 
   /* default framing */
   object-position: center 65%;
 
-  border: 2px solid rgba(255,105,150,0.6);
-  box-shadow: 4px 4px 0 rgba(0,0,0,0.85);
-
   cursor: zoom-in;
 
   transition: transform 0.25s ease;
 }
 
-/* controlled zoom (balanced aesthetic) */
+/* controlled zoom */
 .grid-img:hover {
   transform: scale(1.025);
 }
-
-/* =========================
-   PER-IMAGE VARIATIONS (ZINE FEEL)
-========================= */
 
 /* deeper crop for specific images */
 .shift80 {
   object-position: center 80% !important;
 }
-
-/* slight scrapbook rotation options */
-.rotate1 {
-  transform: rotate(-1deg);
-}
-
-.rotate2 {
-  transform: rotate(1.5deg);
-}
-
-.rotate3 {
-  transform: rotate(-0.5deg);
-}
-
-/* keep hover override clean even with rotation */
-.grid-img.rotate1:hover,
-.grid-img.rotate2:hover,
-.grid-img.rotate3:hover {
-  transform: scale(1.025) rotate(0deg);
-}
-
 /* =========================
    MOBILE RESPONSIVE
 ========================= */

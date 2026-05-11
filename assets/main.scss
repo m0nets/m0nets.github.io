@@ -379,9 +379,8 @@ basement 2026 post
 /* ROW LAYOUT */
 .image-grid .row {
   display: flex;
-
-  gap: 60px;
-  margin-bottom: 60px;
+  gap: 10px;
+  margin-bottom: 12px;
 
   align-items: flex-start;
 }
@@ -403,7 +402,7 @@ basement 2026 post
 
   cursor: default; /* removed zoom feel */
 
-  transition: none; /* ❌ removes animation completely */
+  transition: none; /* removes animation completely */
 }
 
 /* deeper crop option */

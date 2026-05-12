@@ -427,3 +427,20 @@ basement 2026 post
     height: 220px;
   }
 }
+/* =========================
+the cabs 2026 post
+========================= */
+.thecabs-post .post-banner {
+  max-height: 448px; /* was 140px */
+  overflow: hidden;
+}
+
+.thecabs-post .post-banner img {
+  width: 100%;
+  height: 448px; /* match container */
+
+  object-fit: cover;
+  object-position: center 20%;
+
+  display: block;
+}
